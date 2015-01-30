@@ -17,3 +17,7 @@ img {
     border-style: solid;
     border-color: blue;
 }
+
+.inliney {
+    display: inline;
+}

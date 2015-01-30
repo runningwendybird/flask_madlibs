@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, sample
 from flask import Flask, render_template, request
 
 
@@ -24,9 +24,10 @@ def greet_person():
         'awesome', 'terrific', 'fantastic', 'neato', 'fantabulous', 'wowza', 'oh-so-not-meh',
         'brilliant', 'ducky', 'coolio', 'incredible', 'wonderful', 'smashing', 'lovely']
 
-    compliment = choice(AWESOMENESS)
 
-    return render_template("compliment.html", person=player, compliment=compliment)
+    compliments = sample(AWESOMENESS, 3)
+
+    return render_template("compliment.html", person=player, compliments=compliments)
 
 @app.route('/game')
 def show_game_form():
@@ -36,17 +37,18 @@ def show_game_form():
     else: #if playing is 'yes'
         return render_template("game.html")
 
-@app.route("/madlib")
+@app.route("/madlib", methods=['POST', 'GET'])
 def show_madlib():
-    name = request.args.get("person_name")
-    color = request.args.get("color")
-    noun = request.args.get("noun")
-    adj = request.args.get("adj")
-    startdate = request.args.get("start_date")
-    coolPic = request.args.get("image")
-    cheese = request.args.get("cheese")
-    rabbit = request.args.get("rabbit")
-    chopsticks = request.args.get("chopsticks")
+
+    name = request.values.get("person_name")
+    color = request.values.get("color")
+    noun = request.values.get("noun")
+    adj = request.values.get("adj")
+    startdate = request.values.get("start_date")
+    coolPic = request.values.get("image")
+    cheese = request.values.get("cheese")
+    rabbit = request.values.get("rabbit")
+    chopsticks = request.values.get("chopsticks")
 
     html_list = ["madlib.html", "madlib2.html"]
     loadpage = choice(html_list)

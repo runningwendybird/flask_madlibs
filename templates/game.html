@@ -4,29 +4,56 @@
 <!-- a simple form that asks for a person, a color, a noun, and an adjective. -->
 
 <head>
-    <title>GAME!</title>
+    <title>GAME FORM!</title>
 </head>
 
 <body>
-<form action="/madlib"> 
-    Pick a starting date of your story: <input type="month" name="start_date"><br>
-    Name a person: <input type="text", name="person_name"><br>
-    Select a color: <select name="color">
-        <option value="fuschia">Fuschia</option>
-        <option value="teal">Teal</option>
-        <option value="gold">Gold</option>
-        <option value="lime green">Lime Green</option>
-        <option value="violet">Violet</option>
-    </select><br>
-    Give us a noun: <input type="text", name="noun"><br>
-    Give us an adjective: <input type="text", name="adj"><br>
-    Enter the url of an image: <input type="url" name="image"><br>
-    Please select a few items:<br>
-    <input type="checkbox" name="cheese">Block of Cheese
-    <input type="checkbox" name="rabbit">Lucky Rabbit Foot
-    <input type="checkbox" name="chopsticks">Chopsticks<br>
-    <input type="submit">
-</form>
+    <form action="/madlib" id="myform"> 
+        Pick a starting date of your story: <input type="month" name="start_date"><br>
+        Name a person: <input type="text", name="person_name"><br>
+        Select a color: <select name="color">
+            <option value="fuschia">Fuschia</option>
+            <option value="teal">Teal</option>
+            <option value="gold">Gold</option>
+            <option value="lime green">Lime Green</option>
+            <option value="violet">Violet</option>
+        </select><br>
+        Give us a noun: <input type="text", name="noun"><br>
+        Give us an adjective: <input type="text", name="adj"><br>
+        Enter the url of an image: <input type="url" name="image"><br>
+        Please select a few items:<br>
+        <input type="checkbox" name="cheese">Block of Cheese
+        <input type="checkbox" name="rabbit">Lucky Rabbit Foot
+        <input type="checkbox" name="chopsticks">Chopsticks<br>
+        <input type="submit">
+    </form>
+
+
+
+     <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+     <script type="text/javascript">
+
+    // THE BELOW IS A FIRST ATTEMPT AT FORM VALIDATION, NOT WORKING CURRENTLY
+    // $(document).ready(function(){
+    //     $('#myform').validate({
+    //         rules: {
+    //             person_name: {
+    //                 required: true
+    //             }
+    //         }
+    //     });
+    // });
+
+
+
+    // $('form').on("submit",function(evt) {
+    //     evt.preventDefault();
+    //     console.log("yay");
+    // });
+
+
+    // </script>
+
 
 </body>
 

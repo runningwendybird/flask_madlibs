@@ -2,9 +2,26 @@
 <html>
 <head>
   <title>A Compliment</title>
+    <link rel="stylesheet" type="text/css" href="../static/madlibs.css">
+    <style>
+    body {
+        background-color: white
+    }
+    </style>
 </head>
 <body>
-    Hi {{ person }}! I think you're {{ compliment }}!
+
+    <h1>Hi {{ person }}!</h1><br> 
+
+    I think you're:
+    
+        <ul class="inliney">
+            {% for item in compliments %}
+            <li class="important inliney">{{ item }}!</li>
+            {% endfor %}
+        </ul>
+
+    <br><br>
     <form action="/game">
         Do you want to play a game?
         Yes <input type="radio" name="play" value= "yes"> No <input type="radio" name="play" value = "no">
