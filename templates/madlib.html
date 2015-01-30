@@ -2,22 +2,30 @@
 <html>
 <head>
     <title>Your Madlib!</title>
+    <link rel="stylesheet" type="text/css" href="../static/madlibs.css">
 </head>
 <body>
-    <h1>
-        On the fine day of {{ startdate }}, all you had with you was:<br>
-        <ul>
-            {% for item in list_to_print %}
-            <li>{{ item}}</li>
-            {% endfor %}
-        </ul>
 
-        <br>
-        There was a {{ color }} {{ noun }} approaching you on the street.<br><br>
-        It called itself {{ name }} and looked like this:<br> <img src= {{ coolPic }} width="300"><br><br>
-        When you went to touch it, it disappeared in a totally {{ adj }} way.<br><br>
-        No one ever believed you.<br>
-    </h1>
+    <h1>
+        On the fine day of {{ startdate }}... </h1>
+        <div>
+            all you had with you was:<br>
+            <ul>
+                {% for item in list_to_print %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            There was a {{ color }} {{ noun }} approaching you on the street.<br><br>
+            It called itself <span class="important">"{{ name }}"</span> and looked like this:<br> <img src= {{ coolPic }} width="300"><br><br>
+            When you went to touch it, it disappeared in a totally {{ adj }} way.<br><br>
+            No one ever believed you.<br>
+
+            <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+            <script>
+                $("img").fadeOut(3000);
+            </script>
+
+        </div>
    
 </body>
 </html>

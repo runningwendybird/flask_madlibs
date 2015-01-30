@@ -48,6 +48,9 @@ def show_madlib():
     rabbit = request.args.get("rabbit")
     chopsticks = request.args.get("chopsticks")
 
+    html_list = ["madlib.html", "madlib2.html"]
+    loadpage = choice(html_list)
+
     check_dict = {"a block cheese": cheese, "your lucky rabbit foot": rabbit, "a pair of chopsticks": chopsticks}
     list_to_print = []
 
@@ -55,8 +58,9 @@ def show_madlib():
         if check_dict[key] == 'on':
             list_to_print.append(key)
 
-
-    return render_template("madlib.html", name=name, color=color, noun=noun, adj=adj, startdate=startdate, coolPic=coolPic, list_to_print=list_to_print)
+    print loadpage
+    
+    return render_template(loadpage, name=name, color=color, noun=noun, adj=adj, startdate=startdate, coolPic=coolPic, list_to_print=list_to_print)
 
 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Madlib!</title>
+    <link rel="stylesheet" type="text/css" href="../static/madlibs.css">
+</head>
+<body>
+
+
+
+    <h1>A {{ adj }} Party</h1>
+        <p>It's an important day in {{ startdate }}. It's your birthday! But you aren't having a very {{ adj }} party.</p>
+        <br>
+        <p> The only friend who came was {{ name }} and you got {{ color }} {{ noun }}
+            for a present. </p>
+
+        <p> There was a magician! He pulled the following items out of his hat.</p>
+        <ul>
+            {% for item in list_to_print %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+        <p> He also pulled something like this out of his hat. But it slowly disappeared.</p>
+        <img src= {{ coolPic }} width="300">
+
+         <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+            <script>
+                $("img").fadeOut(10000);
+            </script>
+
+</body>
+</html>
